@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Fundo animado -->
+    <div class="animated-bg">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="purple-nebula"></div>
+        <div class="particles-container" id="particles"></div>
+    </div>
+
     <nav class="navbar">
         <div class="logo">
             <i class="fas fa-moon"></i>
@@ -24,50 +32,95 @@
             <li><a href="#about"><i class="fas fa-globe"></i> Sobre</a></li>
             <li><a href="#gallery"><i class="fas fa-image"></i> Galeria</a></li>
             <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
+            <li><button id="themeToggle" class="theme-btn"><i class="fas fa-magic"></i> Efeitos</button></li>
         </ul>
     </nav>
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1 class="title">ECLIPSE <span>LUNAR</span></h1>
-            <p class="subtitle">A escuridão que revela a beleira cósmica. Tecnologia e mistério em harmonia.</p>
-            <button class="cta-btn" id="exploreBtn">Explorar o Eclipse <i class="fas fa-arrow-right"></i></button>
+            <h1 class="title glitch" data-text="ECLIPSE LUNAR">ECLIPSE <span>LUNAR</span></h1>
+            <p class="subtitle">A escuridão que revela a beleza cósmica. Tecnologia e mistério em harmonia.</p>
+            <button class="cta-btn ripple" id="exploreBtn">
+                <span class="btn-text">Explorar o Eclipse</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            <div class="interactive-buttons">
+                <button class="fx-btn" id="starRain"><i class="fas fa-star"></i> Chuva Estelar</button>
+                <button class="fx-btn" id="pulseWave"><i class="fas fa-wave-square"></i> Onda Púrpura</button>
+                <button class="fx-btn" id="moonPhase"><i class="fas fa-moon"></i> Fases Lunares</button>
+            </div>
         </div>
-        <div class="hero-moon">
+        <div class="hero-moon interactive-moon" id="interactiveMoon">
             <div class="moon"></div>
             <div class="shadow"></div>
+            <div class="moon-glow"></div>
         </div>
+        
+        <!-- Efeito de clique na tela -->
+        <div class="click-effects" id="clickEffects"></div>
     </section>
 
     <section class="about" id="about">
-        <h2><i class="fas fa-star"></i> O QUE É UM ECLIPSE LUNAR?</h2>
-        <p>Um fenômeno astronômico onde a Lua penetra na sombra da Terra, criando um espetáculo de cores e sombras que vão do roxo intenso ao negro absoluto. Aqui, traduzimos essa magia para o digital.</p>
+        <h2 class="animated-title"><i class="fas fa-star"></i> O QUE É UM ECLIPSE LUNAR?</h2>
+        <p class="animated-text">Um fenômeno astronômico onde a Lua penetra na sombra da Terra, criando um espetáculo de cores e sombras que vão do roxo intenso ao negro absoluto. Aqui, traduzimos essa magia para o digital.</p>
         <div class="features">
-            <div class="card">
-                <i class="fas fa-palette"></i>
+            <div class="card hover-3d" data-tilt>
+                <i class="fas fa-palette card-icon"></i>
                 <h3>Design Cósmico</h3>
                 <p>Paleta roxo e preto, inspirada na profundidade do espaço.</p>
+                <div class="card-glow"></div>
             </div>
-            <div class="card">
-                <i class="fas fa-bolt"></i>
+            <div class="card hover-3d" data-tilt>
+                <i class="fas fa-bolt card-icon"></i>
                 <h3>Performance Fluida</h3>
                 <p>Leve e rápido como a luz refletida na superfície lunar.</p>
+                <div class="card-glow"></div>
             </div>
-            <div class="card">
-                <i class="fas fa-mobile-alt"></i>
+            <div class="card hover-3d" data-tilt>
+                <i class="fas fa-mobile-alt card-icon"></i>
                 <h3>Totalmente Responsivo</h3>
                 <p>Perfeito em qualquer dispositivo, do celular ao desktop.</p>
+                <div class="card-glow"></div>
+            </div>
+        </div>
+        
+        <!-- Galeria interativa -->
+        <div class="gallery" id="gallery">
+            <h2 class="animated-title"><i class="fas fa-image"></i> GALERIA INTERATIVA</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="--delay: 0s">
+                    <div class="gallery-img" style="background: linear-gradient(135deg, #3a0ca3, #7209b7);"></div>
+                    <div class="gallery-overlay">Eclipse Total</div>
+                </div>
+                <div class="gallery-item" style="--delay: 0.2s">
+                    <div class="gallery-img" style="background: linear-gradient(135deg, #4361ee, #4cc9f0);"></div>
+                    <div class="gallery-overlay">Lua de Sangue</div>
+                </div>
+                <div class="gallery-item" style="--delay: 0.4s">
+                    <div class="gallery-img" style="background: linear-gradient(135deg, #f72585, #b5179e);"></div>
+                    <div class="gallery-overlay">Aurora Púrpura</div>
+                </div>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <p><i class="fas fa-code"></i> Feito com <span class="heart">♥</span> por <strong>ByBot</strong> | Vibe hacker cósmico</p>
-        <div class="social">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+        <div class="footer-content">
+            <p class="footer-text"><i class="fas fa-code"></i> Feito com <span class="heart">♥</span> por <strong class="neon-text">ByBot</strong> | Vibe hacker cósmico</p>
+            <div class="social">
+                <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+            </div>
+            <button id="backToTop" class="back-top-btn">
+                <i class="fas fa-chevron-up"></i>
+            </button>
         </div>
+        
+        <!-- Audio para efeitos (opcional) -->
+        <audio id="clickSound" preload="auto">
+            <source src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" type="audio/mpeg">
+        </audio>
     </footer>
 
     <script src="script.js"></script>
